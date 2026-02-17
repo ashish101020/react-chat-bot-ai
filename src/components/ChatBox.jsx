@@ -74,11 +74,15 @@ const ChatBox = () => {
   return (
     <div className="chatbox-container">
       <div className="chatbox-body">
-        {activeChat?.messages?.map((msg) => (
+        {activeChat.messages.length > 0 ? (
+          activeChat?.messages?.map((msg) => (
           <div key={msg.id} className={msg.side}>
             <ChatCard msg={msg} />
           </div>
-        ))}
+        ))
+        ) : (
+          <p style={{padding:"auto"}}>Hello! How can I assist you today?</p>
+        )}
       </div>
 
       <form
