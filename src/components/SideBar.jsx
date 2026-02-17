@@ -25,7 +25,8 @@ const SideBar = () => {
       {/* Content */}
       <div className="sidebar-content">
         {/* <button className="sidebar-btn" onClick={() => navigate('/history')}>Past Questions</button> */}
-        <Link to="/history">Past Conversations</Link>
+        {/* <Link to="/history">Past Conversations</Link> */}
+        <a href="/history">Past Conversations</a>
 
       </div>     
 
