@@ -1,0 +1,6 @@
+.chat-side-container {
+  width: 80%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+}
