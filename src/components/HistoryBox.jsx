@@ -18,6 +18,7 @@ const HistoryBox = () => {
 
   return chatDate.fromNow(); // 3 days ago, 5 days ago, etc.
 }; 
+
     const { chatHistory } = useChatContext();
     console.log("Chat History in HistoryBox:", chatHistory);
   return (
@@ -45,4 +46,4 @@ const HistoryBox = () => {
   )
 }
 
-export default HistoryBox
+export default HistoryBox;

@@ -8,7 +8,7 @@ const SideBar = () => {
 
   const navigate = useNavigate();
 
-  const { handleCreateNewChat } = useChatContext();
+  const { handleCreateNewChat, handleSaveChat } = useChatContext();
   
   return (
     <div className="sidebar">
@@ -26,7 +26,7 @@ const SideBar = () => {
       <div className="sidebar-content">
         {/* <button className="sidebar-btn" onClick={() => navigate('/history')}>Past Questions</button> */}
         {/* <Link to="/history">Past Conversations</Link> */}
-        <a href="/history">Past Conversations</a>
+        <a href="/history" onClick={handleSaveChat}>Past Conversations</a>
 
       </div>     
 

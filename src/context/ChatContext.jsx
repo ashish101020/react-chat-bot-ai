@@ -15,6 +15,22 @@ export const ChatContextProvider = ({ children }) => {
 
   const hasLoaded = useRef(false);
 
+  const handleSaveChat = () => {
+    if (!activeChat || activeChat.messages.length === 0) return;
+
+    setChatHistory((prev) => {
+      const exists = prev.find((chat) => chat.id === activeChat.id);
+      if (exists) return prev;
+      return [...prev, activeChat];
+    });
+
+    const newChatId = Date.now().toString();
+    const newChat = { id: newChatId, messages: [] };
+
+    setActiveChat(newChat);
+    localStorage.setItem("activeChat", JSON.stringify(newChat));
+  };
+
   // ✅ Load chat history
   useEffect(() => {
     const savedChatHistory = localStorage.getItem("chatHistory");
@@ -77,6 +93,7 @@ export const ChatContextProvider = ({ children }) => {
         isPastChatOpen,
         setIsPastChatOpen,
         selectedChatHistory, setSelectedChatHistory,
+        handleSaveChat
       }}
     >
       {children}
