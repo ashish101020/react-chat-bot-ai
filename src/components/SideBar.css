@@ -55,3 +55,5 @@
 .sidebar-btn:hover {
   background-color: #d0d0d0;
 }
+body.light { background: white; color: black; }
+body.dark { background: #121212; color: white; }

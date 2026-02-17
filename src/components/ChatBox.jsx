@@ -5,7 +5,8 @@ import { faqData } from "../data/faqData";
 import ChatCard from "./ChatCard";
 
 const ChatBox = () => {
-  const { setChatHistory, activeChat, setActiveChat } = useChatContext();
+  const { setChatHistory, activeChat, setActiveChat, theme } = useChatContext();
+  document.body.className = theme.current;
 
   const [query, setQuery] = useState("");
 
@@ -72,28 +73,29 @@ const ChatBox = () => {
   };
 
   return (
-    <div className="chatbox-container">
-        <div className="chatbox-body">
-        {activeChat?.messages?.map((msg) => (
-          <div key={msg.id} className={msg.side}>
-            <ChatCard msg={msg} />
-          </div>
-        ))}
-      </div>
-
-      <div className="chatbox-input-section">
-        <input
-          type="text"
-          value={query}
-          onChange={(e) => setQuery(e.target.value)}
-          placeholder="placeholder='Please tell me about your query!"
-          className="chatbox-input"
-        />
-        <button onClick={handleAddMessage}>Add</button>
-        <button onClick={handleSaveChat}>Save</button>
-      </div>
+  <div className={`chatbox-container`}>
+    <div className="chatbox-body">
+      {activeChat?.messages?.map((msg) => (
+        <div key={msg.id} className={msg.side}>
+          <ChatCard msg={msg} />
+        </div>
+      ))}
     </div>
-  );
+
+    <div className="chatbox-input-section">
+      <input
+        type="text"
+        value={query}
+        onChange={(e) => setQuery(e.target.value)}
+        placeholder="Please tell me about your query!"
+        className="chatbox-input"
+      />
+      <button onClick={handleAddMessage}>Add</button>
+      <button onClick={handleSaveChat}>Save</button>
+    </div>
+  </div>
+);
+
 };
 
 export default ChatBox;

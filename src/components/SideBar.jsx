@@ -8,7 +8,7 @@ const SideBar = () => {
 
   const navigate = useNavigate();
 
-  const { handleCreateNewChat, chatHistory, isPastChatOpen, setIsPastChatOpen, setSelectedChatHistory } = useChatContext();
+  const { handleCreateNewChat } = useChatContext();
   
   return (
     <div className="sidebar">
@@ -24,17 +24,16 @@ const SideBar = () => {
 
       {/* Content */}
       <div className="sidebar-content">
-        <button className="sidebar-btn" onClick={() => setIsPastChatOpen(!isPastChatOpen)}>Past Questions</button>
-        <div >
+        <button className="sidebar-btn" onClick={() => navigate('/history')}>Past Questions</button>
+        {/* <div >
         { isPastChatOpen && chatHistory.map((chat) => (
           <div key={chat.id} style={{ padding: "10px", borderBottom: "1px solid #ddd", cursor: "pointer" }}>
             <p onClick={() => {
-              setSelectedChatHistory(chat);
               navigate('/history');
             }}>{chat.messages[0]?.text || "Untitled Chat"}</p>
           </div>
         ))}
-      </div>
+      </div> */}
       </div>
 
       
