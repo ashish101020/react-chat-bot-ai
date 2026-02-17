@@ -5,8 +5,8 @@ import { faqData } from "../data/faqData";
 import ChatCard from "./ChatCard";
 
 const ChatBox = () => {
-  const { setChatHistory, activeChat, setActiveChat, theme } = useChatContext();
-  document.body.className = theme.current;
+  const { setChatHistory, activeChat, setActiveChat, themeRef } = useChatContext();
+  document.body.className = themeRef.current;
 
   const [query, setQuery] = useState("");
 

@@ -3,7 +3,7 @@ import { createContext, useContext, useEffect, useRef, useState } from "react";
 const ChatContext = createContext();
 
 export const ChatContextProvider = ({ children }) => {
-  const theme = useRef("light");
+  const themeRef = useRef("light");
   const [chatHistory, setChatHistory] = useState(() => {
     const saved = localStorage.getItem("chatHistory");
     return saved ? JSON.parse(saved) : [];
@@ -65,8 +65,8 @@ export const ChatContextProvider = ({ children }) => {
   };
 
   useEffect(() => {
-  document.body.className = theme.current;
-}, [theme]);
+  document.body.className = themeRef.current;
+}, [themeRef]);
 
 
   return (
@@ -81,7 +81,7 @@ export const ChatContextProvider = ({ children }) => {
         setActiveChat,
         isPastChatOpen,
         setIsPastChatOpen,
-        theme,
+        themeRef,
         selectedChatHistory, setSelectedChatHistory,
       }}
     >
