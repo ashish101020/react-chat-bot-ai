@@ -10,7 +10,7 @@ const ChatBox = () => {
   const [query, setQuery] = useState("");
 
   const handleAddMessage = (e) => {
-    e.preventDefault(); // ✅ prevent page reload
+    e.preventDefault();
 
     if (!query.trim() || !activeChat) return;
 
