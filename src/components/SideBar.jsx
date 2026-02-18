@@ -26,7 +26,7 @@ const SideBar = () => {
       <div className="sidebar-content">
         {/* <button className="sidebar-btn" onClick={() => navigate('/history')}>Past Questions</button> */}
         {/* <Link to="/history">Past Conversations</Link> */}
-        <a href="/history" onClick={handleSaveChat}>Past Conversations</a>
+        <a href="/history"><button onClick={handleSaveChat}>Past Conversations</button></a>
 
       </div>     
 
