@@ -42,7 +42,7 @@ const ChatBox = () => {
         id: Date.now() + 1,
         text: found
           ? found.answer
-          : "Sorry, I don't have an answer for that.",
+          : "Sorry, Did not understand your query!",
         timestamp: new Date().toISOString(),
         side: "bot",
         liked: false,

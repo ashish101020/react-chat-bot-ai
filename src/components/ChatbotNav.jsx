@@ -3,11 +3,11 @@ import "./ChatbotNav.css";
 
 const ChatbotNav = () => {
   return (
-    <div className="chatbox-header">
+    <header className="chatbox-header">
       <div className="chatbox-header-content">
         <h1>Customer Support AI</h1>
       </div>
-    </div>
+    </header>
   );
 };
 
