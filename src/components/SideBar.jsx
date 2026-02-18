@@ -2,7 +2,7 @@ import React from 'react'
 import './SideBar.css'
 import { useChatContext } from '../context/ChatContext'
 import logo from '../assets/logo.png'
-// import { Link, useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 const SideBar = () => {
 
@@ -15,12 +15,21 @@ const SideBar = () => {
 
       {/* Header */}
       <div className="sidebar-header">
-        <div className="sidebar-title">
-          <img src={logo} alt="logo" className="logo" />
-          <h3>New Query</h3>
-        </div>
-        <button className="new-chat-btn" onClick={handleCreateNewChat}>O</button>
-      </div>
+  <Link 
+    to="/" 
+    className="sidebar-title" 
+    onClick={handleCreateNewChat}
+  >
+    <img src={logo} alt="logo" className="logo" />
+    <button 
+      type="button"
+      className="new-chat-btn"
+    >
+      O
+    </button>
+    <h3>New Query</h3>
+  </Link>
+</div>
 
       {/* Content */}
       <div className="sidebar-content">

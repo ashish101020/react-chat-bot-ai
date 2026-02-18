@@ -95,7 +95,7 @@ const ChatBox = () => {
           placeholder="Please tell me about your query!"
           className="chatbox-input"
         />
-        <button type="submit">Add</button>
+        <button type="submit">Ask</button>
         <button type="button" onClick={handleSaveChat}>
           Save
         </button>
