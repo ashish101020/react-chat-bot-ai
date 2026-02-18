@@ -2,11 +2,11 @@ import React from 'react'
 import './SideBar.css'
 import { useChatContext } from '../context/ChatContext'
 import logo from '../assets/logo.png'
-import { Link, useNavigate } from 'react-router-dom'
+// import { Link, useNavigate } from 'react-router-dom'
 
 const SideBar = () => {
 
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   const { handleCreateNewChat, handleSaveChat } = useChatContext();
   
