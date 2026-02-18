@@ -27,7 +27,7 @@ const SideBar = () => {
     >
       O
     </button>
-    <h3>New Query</h3>
+    <h3>New Query?</h3>
   </Link>
 </div>
 
